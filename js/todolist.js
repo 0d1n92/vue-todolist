@@ -15,20 +15,17 @@ var app =
     },
     methods: {
       submit:function(){
-        console.log("test");
         this.addElement();
+
+
       },
       // - aggiungere un campo di input e un pulsante per aggiungere nuove cose da fare alla lista;
       addElement:function(){
         this.todolist.push(this.addItem);
+          this.addItem="";
       },
       // - cancellare un item dalla lista, al click sulla relativa icona 'X'.
-      removeElement: function(index){
-        console.log(index);
-        this.todolist.splice(index,1);
-        console.log(this.todolist)
 
-      }
   }
 
 })
