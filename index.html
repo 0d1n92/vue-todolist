@@ -5,26 +5,36 @@
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <header>
+      <h1>Daily To do list</h1>
+    </header>
     <div id="app">
       <!-- // - aggiungere un campo di input e un pulsante per aggiungere nuove cose da fare alla lista; -->
       <div id="wrapper">
-        <div id="form">
-          <button type="button" name="button" v-on:click="isHidden = !isHidden"><i class="fas fa-plus-circle"></i></button>
-          <div v-if="!isHidden" id="add_form">
-            <input id="additem" type="text" name="add" v-on:keyup.enter="submit" v-model="addItem" value="">
-            <button id=btn_additems type="button" name="button" @click="addElement">Send</button>
-          </div>
-        </div>
+
         <ul id="to_do_list">
           <!-- // - creare una lista di cose da fare e mostrarla in pagina con Vue; -->
           <li v-for="(element, index) in todolist"  class="item_list">{{element}}<i @click="removeElement(index)" class="far fa-times-circle"></i></li>
         </ul>
+        <div class="clearfix" id="form">
 
+          <div v-if="!isHidden" id="add_form">
+
+            <input id="additem" type="text" name="add" v-on:keyup.enter="submit" v-model="addItem" placeholder=" altri impegni.." value="" >
+
+            <button id=btn_additems type="button" name="button" @click="addElement"><i class="far fa-paper-plane"></i></button>
+          </div>
+
+          <button id="show_add_form" type="button" name="button" v-on:click="isHidden = !isHidden"><i class="fas fa-plus-circle"></i></button>
+
+        </div>
       </div>
-
     </div>
     <script src="js/todolist.js" charset="utf-8"></script>
   </body>

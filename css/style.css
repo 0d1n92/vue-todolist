@@ -5,18 +5,78 @@
   box-sizing: border-box;
   }
 /* reset-CLOSE */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+button:focus,input:focus {
+  border: none;
+  outline: none;
+}
+/* header */
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  background-color: #79a3b1;
+}
+header h1 {
+  font-size: 40px;
+  font-family: 'Langar', cursive;
+  letter-spacing:
+}
+/* header-CLOSE */
 #wrapper {
-  position: relative;
-  padding-top: 100px;
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
   display: flex;
+  position: relative;
+  padding-top: 100px;
   flex-direction: column;
 }
-
+/* todo id */
 .item_list {
+  height: 60px;
+  line-height: 60px;
   list-style: none;
+  font-size: 20px;
+  border-bottom: 1px solid #d0e8f2;
+  font-family: 'Shadows Into Light', cursive;
+  vertical-align: center;
+
 }
 .item_list i.fa-times-circle {
   margin-left: 30px;
 }
+/* todo id-CLOSE */
+
+/* FORM AND BUTTON ADD EVENT */
+button#show_add_form {
+  float: right;
+  background: transparent;
+  border:none;
+  color: #456268;
+  margin-top: 20px;
+  font-size: 40px;
+}
+input#additem {
+  height: 60px;
+  width:calc(100% - 50px);
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #d0e8f2;
+}
+ button#btn_additems {
+   width: 40px;
+   background-color: transparent;
+   color: #456268;
+   border: none;
+   font-size: 30px;
+ }
+/* FORM AND BUTTON ADD EVENT-CLOSE */
