@@ -10,13 +10,20 @@
   <body>
     <div id="app">
       <!-- // - aggiungere un campo di input e un pulsante per aggiungere nuove cose da fare alla lista; -->
-      <input type="text" name="add" v-on:keyup.enter="submit" v-model="addItem" value="">
+      <div id="wrapper">
+        <div id="form">
+          <button type="button" name="button" v-on:click="isHidden = !isHidden"><i class="fas fa-plus-circle"></i></button>
+          <div v-if="!isHidden" id="add_form">
+            <input id="additem" type="text" name="add" v-on:keyup.enter="submit" v-model="addItem" value="">
+            <button id=btn_additems type="button" name="button" @click="addElement">Send</button>
+          </div>
+        </div>
+        <ul id="to_do_list">
+          <!-- // - creare una lista di cose da fare e mostrarla in pagina con Vue; -->
+          <li v-for="(element, index) in todolist"  class="item_list">{{element}}<i @click="removeElement(index)" class="far fa-times-circle"></i></li>
+        </ul>
 
-      <button type="button" name="button" @click="addElement">Send</button>
-      <ul id="to_do_list">
-        <!-- // - creare una lista di cose da fare e mostrarla in pagina con Vue; -->
-        <li v-for="(element, index) in todolist"  class="item_list">{{element}}<i @click="removeElement(index)" class="far fa-times-circle"></i></li>
-      </ul>
+      </div>
 
     </div>
     <script src="js/todolist.js" charset="utf-8"></script>
