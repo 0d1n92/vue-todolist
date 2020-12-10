@@ -15,7 +15,7 @@
       <button type="button" name="button" @click="addElement">Send</button>
       <ul id="to_do_list">
         <!-- // - creare una lista di cose da fare e mostrarla in pagina con Vue; -->
-        <li v-for="element in todolist" class="item_list">{{element}}<i class="far fa-times-circle"></i></li>
+        <li v-for="(element, index) in todolist"  class="item_list">{{element}}<i @click="removeElement(index)" class="far fa-times-circle"></i></li>
       </ul>
 
     </div>
